@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+{%extends 'authapp/loghome.html'%}
+{%load static%}
+
+
+{% block body_block %}
+
+
+<div class="container mt-5">
+    <div class="row formbasesign">
+
+
+
+                {% if form.errors %}
+                <p>Your username and password didn't match. Please try again.</p>
+                {% endif %}
+                <h2 style="color:black;">Login here !!</h2>
+                <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+
+                    <input type="submit" value="login"/>
+                </form>
+
+
+    </div>
+</div>
+
+
+{% endblock %}
+

@@ -1,0 +1,21 @@
+{% extends 'customer/basecust.html'%}
+{%block body_block%}
+
+
+
+<div class="container mt-5">
+
+
+<form action="" method="post">
+
+    {%csrf_token%}
+    {{form.as_p}}
+    <a href="" class="">
+        <input type="submit" value="Update">
+    </a>
+
+</form>
+
+</div>
+
+{%endblock%}

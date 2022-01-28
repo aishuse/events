@@ -1,0 +1,21 @@
+{% extends 'customer/basecust.html'%}
+{%block body_block%}
+
+<div class="container mt-5">
+
+    <h1 class="mb-5">Add an Event</h1>
+
+<form action="" method="post" enctype="multipart/form-data">
+
+      {%csrf_token%}
+    {{form.as_p}}
+    <a href="">
+           <input type="submit" value="Add Event">
+    </a>
+
+
+
+</form>
+
+</div>
+{%endblock%}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+{%extends 'authapp/baseadmin.html'%}
+
+{%load static%}
+
+
+{% block body_block %}
+
+<table class="table">
+
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>is active</th>
+        <th>Actions</th>
+    </tr>
+    {%for customer in customers%}
+    <tr>
+        <td>{{customer.name}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.phone}}</td>
+        <td>{{customer.is_active}}</td>
+
+    </tr>
+    {%endfor%}
+</table>
+
+{%endblock%}

@@ -1,0 +1,56 @@
+{% extends 'customer/basecust.html'%}
+{%block body_block%}
+
+<div class="container mt-5">
+    <h4>My Events : {{events.count}}</h4>
+
+
+    {%for event in events%}
+
+
+    <div class="bdetail card p-3 mt-5">
+        <img src="{{event.image.url}}" alt="" width="50%" height="60%">
+        <table class="mt-4">
+            <tr>
+                <td class="bookdetail">Event Name:</td>
+                <td>{{event.name}}</td>
+            </tr>
+            <tr>
+                <td class="bookdetail">Venue:</td>
+                <td>{{event.venue}}</td>
+
+
+            </tr>
+            <tr>
+                <td class="bookdetail">Date:</td>
+
+                <td> {{event.date}}</td>
+            </tr>
+
+            <tr>
+                <td class="bookdetail">Start Time :</td>
+
+                <td>{{event.start_time}}</td>
+            </tr>
+
+            <tr>
+                <td class="bookdetail">End Time :</td>
+
+                <td>{{event.end_time}}</td>
+            </tr>
+
+        </table>
+
+
+        <a style="width:100px; height:40px;" href="{%url 'updateevent' event.pk%}"
+           class="btn btn-secondary mt-3">Update</a>
+
+           <a style="width:100px; height:40px;" href="{%url 'deleteevent' event.pk%}"
+           class="btn btn-secondary mt-3">Delete</a>
+    </div>
+
+
+    {%endfor%}
+</div>
+
+{%endblock%}
