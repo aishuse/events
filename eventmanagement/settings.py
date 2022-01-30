@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
+import django_heroku
 import os
 from pathlib import Path
 
@@ -149,3 +150,4 @@ STRIPE_SECRET_KEY = 'sk_test_51KFL3ySAzjfwOsg9tg79akVTZfftrqlhgUgzmPAKiVFWRVZJF9
 STRIPE_PUBLISHABLE_KEY = 'pk_test_51KFL3ySAzjfwOsg95UpQibhhYe3Kbfg3gGUNkshtVBJ4fFfp2NzQXLvYTEOzqrTbC0CXNsSztKraEP6BPH5X0Mqt00mGg3Fmxc'
 
 
+django_heroku.settings(locals()) 
