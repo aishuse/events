@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-5qs)=(u02z4xp$ze*ij!=i-qyvs%pxcr=))e(9=1agm_4biwj5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -150,4 +151,4 @@ STRIPE_SECRET_KEY = 'sk_test_51KFL3ySAzjfwOsg9tg79akVTZfftrqlhgUgzmPAKiVFWRVZJF9
 STRIPE_PUBLISHABLE_KEY = 'pk_test_51KFL3ySAzjfwOsg95UpQibhhYe3Kbfg3gGUNkshtVBJ4fFfp2NzQXLvYTEOzqrTbC0CXNsSztKraEP6BPH5X0Mqt00mGg3Fmxc'
 
 
-django_heroku.settings(locals()) 
+django_heroku.settings(locals())
