@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-5qs)=(u02z4xp$ze*ij!=i-qyvs%pxcr=))e(9=1agm_4biwj5
 DEBUG = True
 
 # ALLOWED_HOSTS = ['127.0.0.1', 'aiswaryaeventmanagement.herokuapp.com/']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '3.84.54.86']
 # Application definition
 
 INSTALLED_APPS = [
