@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 from datetime import timedelta
 
-import django_heroku
+# import django_heroku
 import os
 from pathlib import Path
 
@@ -27,8 +27,8 @@ SECRET_KEY = 'django-insecure-5qs)=(u02z4xp$ze*ij!=i-qyvs%pxcr=))e(9=1agm_4biwj5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'aiswaryaeventmanagement.herokuapp.com/']
-
+# ALLOWED_HOSTS = ['127.0.0.1', 'aiswaryaeventmanagement.herokuapp.com/']
+ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,9 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'authapp',
     'customer',
-    'api',
-    'rest_framework',
-    'rest_framework.authtoken',
+    # 'api',
+    # 'rest_framework',
+    # 'rest_framework.authtoken',
 #
 
 ]
@@ -81,16 +81,24 @@ WSGI_APPLICATION = 'eventmanagement.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'event',
+#         'USER': 'postgres',
+#         'PASSWORD': 'sarath',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'event',
-        'USER': 'postgres',
-        'PASSWORD': 'sarath',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': str(BASE_DIR / "db.sqlite3"),
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -206,4 +214,4 @@ REST_FRAMEWORK = {
 #     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 # }
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
