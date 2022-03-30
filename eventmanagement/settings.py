@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'authapp',
     'customer',
+    'storages',
+
     # 'api',
     # 'rest_framework',
     # 'rest_framework.authtoken',
@@ -133,11 +135,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+# )
+#
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -157,7 +159,7 @@ LOGOUT_REDIRECT_URL = 'loghome'
 STRIPE_SECRET_KEY = 'sk_test_51KFL3ySAzjfwOsg9tg79akVTZfftrqlhgUgzmPAKiVFWRVZJF9LmZMx0yBzavIoAJS25qw2Sw9rPiYM6uqimYhWN00ylHplYwJ'
 STRIPE_PUBLISHABLE_KEY = 'pk_test_51KFL3ySAzjfwOsg95UpQibhhYe3Kbfg3gGUNkshtVBJ4fFfp2NzQXLvYTEOzqrTbC0CXNsSztKraEP6BPH5X0Mqt00mGg3Fmxc'
 
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED = True
@@ -214,3 +216,29 @@ REST_FRAMEWORK = {
 # }
 
 # django_heroku.settings(locals())
+
+
+# AWS_ACCESS_KEY_ID = 'AKIA2XJHCOCGQOBUKK4P'
+# AWS_SECRET_ACCESS_KEY = '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'
+# AWS_STORAGE_BUCKET_NAME = 'aws3-static'
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+# AWS_S3_OBJECT_PARAMETERS = {
+#     'CacheControl': 'max-age=86400',
+# }
+# AWS_LOCATION = 'static'
+#
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
+# STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# AWS_QUERYSTRING_AUTH = False
+
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+AWS_ACCESS_KEY_ID = 'AKIA2XJHCOCGQOBUKK4P'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'eventpicz'
+AWS_QUERYSTRING_AUTH = False
